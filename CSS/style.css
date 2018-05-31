@@ -1,0 +1,53 @@
+body {
+    background-image: url("../img/background-index.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+    background-color: whitesmoke;
+    font-family: 'Slabo 27px', serif;
+}
+.slabo {
+    font-family: 'Slabo 27px', serif;
+}
+.italianno {
+    font-family: 'Italianno', cursive;
+}
+h1 {
+    font-size: 5em;
+}
+.headline {
+    font-size: 2em;
+}
+.paper {
+    background-color: rgba(245, 245, 245, 0.5);
+}
+.logo {
+    max-height: 50px;
+}
+.bg-light {
+    background-color: whitesmoke;
+}
+
+/* unvisited link */
+a:link {
+    color: black;
+    text-decoration: underline;
+}
+
+/* visited link */
+a:visited {
+    color: black;
+    text-decoration: underline;
+}
+
+/* mouse over link */
+a:hover {
+    color: darkred;
+    text-decoration: underline;
+}
+
+/* selected link */
+a:active {
+    color: black;
+    text-decoration: underline;
+}
