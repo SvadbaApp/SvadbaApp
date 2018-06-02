@@ -8,11 +8,12 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="index.php"><strong>POČETNA</strong><span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="index.php"><strong>SVADBA APP</strong><span class="sr-only">(current)</span></a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0" action="repository/signOut.php" method="POST">
       <button class="btn btn-light my-2 my-sm-0" type="submit" name="submit">Odjava</button>
     </form>
   </div>
+  <a class="navbar-brand img-hor-vert" href="index.php"><img class="logo" src="img/logo.png" alt="Svadba-App-Logo"></a>
 </nav>

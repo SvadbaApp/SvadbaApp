@@ -14,7 +14,6 @@ class UserRepository {
             header("Location: ../index.php?signup=wrongPassword");
             die();
         }
-
         return $result;
     }
 

@@ -10,7 +10,7 @@ require_once "head.html";
 </div>
 <?php
     if (array_key_exists("task", $_GET) && $_GET["task"]== "registerUser") {
-        include "signUpForm.html";
+        include "signUpForm.php";
     } else if ($_SESSION) {
         header("Location: userHomepage.php");
     } else {

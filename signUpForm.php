@@ -1,3 +1,6 @@
+<?php
+include_once "repository/gender.php";
+?>
 <div class="container">
     <div class="row">
         <div class="col-sm-3"></div>
@@ -15,20 +18,9 @@
                 </div>
                 <fieldset class="form-group">
                     <div class="row">
-                        <legend class="col-form-label col-sm-2 pt-0 text-center">Spol</legend>
+                        <!-- <legend class="col-form-label col-sm-2 pt-0 text-center">Spol</legend> -->
                         <div class="col-sm-10">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="gender" id="gender" value="1">
-                                <label class="form-check-label" for="male">
-                                    Muško
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="gender" id="gender" value="2" checked>
-                                <label class="form-check-label" for="female">
-                                    Žensko
-                                </label>
-                            </div>
+                            <?php ShowGender::Draw(); ?>
                         </div>
                     </div>
                 </fieldset>

@@ -22,7 +22,7 @@ class GetChecklist {
         }
 
         foreach ($entireChecklist as $singleItem) {
-            echo "<li><a href='userHomepage.php?id=$singleItem->id#Go'>$singleItem->title</a></li>";
+            echo "<li><a href='userHomepage.php?id=$singleItem->id'>$singleItem->title</a></li>";
         }
     }
 

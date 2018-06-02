@@ -2,7 +2,7 @@ body {
     background-image: url("../img/background-index.jpeg");
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: center; 
+    background-position: center;
     background-color: whitesmoke;
     font-family: 'Slabo 27px', serif;
 }
@@ -11,21 +11,6 @@ body {
 }
 .italianno {
     font-family: 'Italianno', cursive;
-}
-h1 {
-    font-size: 5em;
-}
-.headline {
-    font-size: 2em;
-}
-.paper {
-    background-color: rgba(245, 245, 245, 0.5);
-}
-.logo {
-    max-height: 50px;
-}
-.bg-light {
-    background-color: whitesmoke;
 }
 
 /* unvisited link */
@@ -50,4 +35,42 @@ a:hover {
 a:active {
     color: black;
     text-decoration: underline;
+}
+
+h1 {
+    font-size: 5em;
+}
+.headline {
+    font-size: 2em;
+}
+.paper {
+    background-color: rgba(245, 245, 245, 0.5);
+}
+.logo {
+    max-height: 50px;
+}
+.bg-light {
+    background-color: whitesmoke;
+}
+
+.btn-link-black {
+    font-weight: 400;
+    color: black;
+    background-color: transparent;
+}
+
+.provider-logo {
+    width: 286px;
+    height: 180px;
+}
+
+.card {
+    height: 400px;
+}
+
+.img-hor-vert {
+    -moz-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    transform: scale(-1, 1);
 }
