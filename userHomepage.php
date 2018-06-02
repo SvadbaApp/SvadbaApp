@@ -58,7 +58,7 @@ if(array_key_exists("id", $_GET) && $_GET["id"] > 12) {
             <h2>INFO</h2><hr>
             <h4><?php echo $_SESSION['gender']."<br>".$_SESSION['firstName']." ".$_SESSION['lastName']; ?></h4>
             <p>E-pošta: <?php echo $_SESSION['email']; ?></p>
-            <p>Datum svadbe: <?php echo $_SESSION['weddingDate']; ?></p>
+            <p>Datum svadbe: <?php echo(date("d.m.Y", strtotime($_SESSION['weddingDate']))); ?></p>
         </div>
     </div>
 </div>
