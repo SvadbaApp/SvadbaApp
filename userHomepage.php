@@ -16,9 +16,19 @@ if(array_key_exists("id", $_GET) && $_GET["id"] > 12) {
     die();
 }
 ?>
-<div class="container col-12 paper">
+<div class="container col-sm-10 paper">
+<hr>
+<h4><?php echo $_SESSION['firstName']." ".$_SESSION['lastName'];?>, dobro došli u Svadba App, planer za Vašu svadbu<?php
+    $dateDiff = round((strtotime($_SESSION['weddingDate']) - time()) / (60 * 60 * 24));
+    if ($dateDiff <= 0) {
+        echo ". Čestitamo!!!</h4>";
+    } else {
+        echo " do koje ima još $dateDiff dana.</h4>";
+    }
+    ?>
+<hr>
     <div class="row">
-        <div class="col-sm-2">
+        <div class="col-sm-3">
             <h2 class="text-center">LISTA ZA SVADBU</h2><hr>
             <ul>
                 <?php GetChecklist::DrawList(); ?>
@@ -31,21 +41,30 @@ if(array_key_exists("id", $_GET) && $_GET["id"] > 12) {
             <div class="text-justify">
                 <?php GetChecklist::DrawDescription($_GET['id']);
                 } else if($_GET == NULL) { ?>
-                    <h3 class="text-center">Svadba App</h3>
+                    <h2 class="text-center">Svadba App</h2><hr>
                     <div class="text-justify"> <?php
                     echo "<p>Organiziranje vjenčanja uistinu je zahtjevan posao koji traži puno planiranja i razmišljanja unaprijed.  Morate razmišljati o vjenčanici, cipelama, šminki, najmu prostora za vjenčanje, vjenčanom buketu, tečaju plesa, fotografu, dekoraciji, pozivnicama i zahvalnicama, rasporedu sjedenja gostiju i mnogim drugim sitnicama.<br><br>Kako biste bili sigurni da prilikom organizacije svojeg vjenčanja niste ništa propustili, prođite s nama popis, odnosno checklistu za vjenčanje</p>";
                 } ?>
             </div>
             <!-- Posuđen tekst od Apparo-Centar vjenčanog prstenja -->
         </div>
-        <div class="col-sm-6">
-            <h2 class="text-center">VAŠI PODACI</h2><hr>
-            <?php var_dump(showUserChoice::Draw($_GET['id'])); ?>
+        <div class="col-sm-3">
+            <?php if(array_key_exists("id", $_GET)) {
+                echo "<h2 class='text-center'>VAŠ ODABIR</h2><hr>";
+                showUserChoice::Draw($_GET['id']);
+                } ?>
+        </div>
+        <div class="col-sm-2 text-center">
+            <h2>INFO</h2><hr>
+            <h4><?php echo $_SESSION['gender']."<br>".$_SESSION['firstName']." ".$_SESSION['lastName']; ?></h4>
+            <p>E-pošta: <?php echo $_SESSION['email']; ?></p>
+            <p>Datum svadbe: <?php echo $_SESSION['weddingDate']; ?></p>
         </div>
     </div>
 </div>
 <?php if(array_key_exists("id", $_GET)) { ?>
-<div class="container-fluid col-12 paper">
+<div class="container-fluid col-sm-10 paper">
+    <br>
     <h2 class="text-center">PONUDE</h2><hr>
     <div class="row">
         <!--example site start-->

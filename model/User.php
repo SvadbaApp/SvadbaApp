@@ -7,13 +7,15 @@ class User {
   private $gender;
   private $email;
   private $password;
+  private $weddingDate;
 
-  public function __construct($firstName, $lastName, $gender, $email, $password) {
+  public function __construct($firstName, $lastName, $gender, $email, $password, $weddingDate) {
     $this->firstName = $firstName;
     $this->lastName = $lastName;
     $this->gender = $gender;
     $this->email = $email;
     $this->password = $password;
+    $this->weddingDate = $weddingDate;
   }
 
   public function getId() {
@@ -38,5 +40,9 @@ class User {
 
   public function getPassword() {
     return $this->password;
+  }
+
+  public function getWeddingDate() {
+    return $this->weddingDate;
   }
 }

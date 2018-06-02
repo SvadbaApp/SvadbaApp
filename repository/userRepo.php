@@ -20,12 +20,13 @@ class UserRepository {
     // Funkcija umece novog korisnika u bazu
     public function insertNewUser($userToInsert) {
         $conn = Db::getDbConnection();
-        $query = $conn->prepare("INSERT INTO USER (FIRST_NAME, LAST_NAME, GENDER, EMAIL, PASSWORD) VALUES (:fn, :ln, :gender, :em, :pass)");
+        $query = $conn->prepare("INSERT INTO USER (FIRST_NAME, LAST_NAME, GENDER, EMAIL, PASSWORD, WEDDING_DATE) VALUES (:fn, :ln, :gender, :em, :pass, :weddingDate)");
         $query->bindParam(':fn', $userToInsert->getFirstName());
         $query->bindParam(':ln', $userToInsert->getLastName());
         $query->bindParam(':gender', $userToInsert->getGender());
         $query->bindParam(':em', $userToInsert->getEmail());
         $query->bindParam(':pass', $userToInsert->getPassword());
+        $query->bindParam(':weddingDate', $userToInsert->getWeddingDate());
         $query->execute();
     }
 }

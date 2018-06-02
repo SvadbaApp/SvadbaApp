@@ -17,6 +17,7 @@ require_once "head.html";
         include "signInForm.html";
     }
 ?>
+<br><br>
 <?php
 require_once "footer.php";
 ?>

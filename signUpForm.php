@@ -18,12 +18,15 @@ include_once "repository/gender.php";
                 </div>
                 <fieldset class="form-group">
                     <div class="row">
-                        <!-- <legend class="col-form-label col-sm-2 pt-0 text-center">Spol</legend> -->
                         <div class="col-sm-10">
                             <?php ShowGender::Draw(); ?>
                         </div>
                     </div>
                 </fieldset>
+                <div class="form-group">
+                    <label for='weddingDate'>Datum svadbe:</label>
+                    <input type="date" class="form-control" name="weddingDate" required>
+                </div>
                 <div class="form-group">
                     <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="E-mail" required>
                 </div>

@@ -9,11 +9,11 @@ if (isset($_POST['submit'])){
         header("Location: ../index.php?task=registerUser#passwordsOrEmailDontMatch");
         die();
     }
-
     $firstName = $_POST['firstName'];
     $lastName = $_POST['lastName'];
     $gender = $_POST['gender'];
     $email = $_POST['email'];
+    $weddingDate = $_POST['weddingDate'];
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         header("Location: ../index.php?task=registerUser#emailNotValidated");
         die();
@@ -31,7 +31,7 @@ if (isset($_POST['submit'])){
     }
 
     //dodaj korisnika u bazu
-    $newUser = new User($firstName, $lastName, $gender, $email, password_hash($_POST['password'], PASSWORD_DEFAULT));
+    $newUser = new User($firstName, $lastName, $gender, $email, password_hash($_POST['password'], PASSWORD_DEFAULT), $weddingDate);
     UserRepository::insertNewUser($newUser);
 
     //log in korisnika

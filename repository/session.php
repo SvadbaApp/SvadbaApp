@@ -6,4 +6,5 @@ $_SESSION['firstName'] = $user[0]['FIRST_NAME'];
 $_SESSION['lastName'] = $user[0]['LAST_NAME'];
 $_SESSION['email'] = $user[0]['EMAIL'];
 $_SESSION['gender'] = $user[0]['GENDER_TITLE'];
+$_SESSION['weddingDate'] = $user[0]['WEDDING_DATE'];
 header("Location: ../userHomepage.php");
