@@ -17,10 +17,6 @@ class showUserChoice {
             $newUserChoice->id = $userChoice['ID'];
             $newUserChoice->userId = $userChoice['USER_ID'];
             $newUserChoice->checklistId = $userChoice['CHECKLIST_ID'];
-            $newUserChoice->title = $userChoice['TITLE'];
-            $newUserChoice->phone = $userChoice['PHONE'];
-            $newUserChoice->email = $userChoice['EMAIL'];
-            $newUserChoice->link = $userChoice['LINK'];
             $newUserChoice->info = $userChoice['INFO'];
             array_push($allUserChoice, $newUserChoice);
         }
@@ -39,47 +35,21 @@ class showUserChoice {
 
     public static function Draw($id) {
         if (self::Get($id) == NULL) {
-            echo    "<form action='' method='POST'>
-                        <input type='hidden' name='formType' value='registerUser'>
+            echo    "<form action='./submits/changeUserChoice.php' method='POST'>
+                        <input type='hidden' name='checklistId' value='$id'>
                         <div class='form-group'>
-                            <input type='text' class='form-control' name='title' placeholder='Naziv'>
+                            <textarea class='form-control' type='text' name='info' rows='10' placeholder='prazno'></textarea>
                         </div>
-                        <div class='form-group'>
-                            <input type='tel' class='form-control' name='phone' placeholder='Kontakt broj'>
-                        </div>
-                        <div class='form-group'>
-                            <input type='email' class='form-control' name='email' aria-describedby='emailHelp' placeholder='E-pošta'>
-                        </div>
-                        <div class='form-group'>
-                            <input type='url' class='form-control' name='link' placeholder='Internet'>
-                        </div>
-                        <div class='form-group'>
-                            <label for='info'>Vaš zapis:</label>
-                            <textarea class='form-control' type='text' name='info' row='4'></textarea>
-                        </div>
-                        <button type='submit' name='submit' class='btn btn-light float-right'>Promjeni</button>
+                        <button type='submit' name='submit' class='btn btn-light float-right'>Zapiši</button>
                     </form>";
         } else {
         foreach (self::Get($id) as $userChoice) {
-            echo    "<form action='' method='POST'>
-                        <input type='hidden' name='formType' value='registerUser'>
+            echo    "<form action='./submits/changeUserChoice.php' method='POST'>
+                        <input type='hidden' name='checklistId' value='$id'>
                         <div class='form-group'>
-                            <input type='text' class='form-control' name='title' placeholder='$userChoice->title'>
+                            <textarea class='form-control' type='text' name='info' rows='10' placeholder='$userChoice->info'>$userChoice->info</textarea>
                         </div>
-                        <div class='form-group'>
-                            <input type='tel' class='form-control' name='phone' placeholder='$userChoice->phone'>
-                        </div>
-                        <div class='form-group'>
-                            <input type='email' class='form-control' name='email' aria-describedby='emailHelp' placeholder='$userChoice->email'>
-                        </div>
-                        <div class='form-group'>
-                            <input type='url' class='form-control' name='link' placeholder='$userChoice->link'>
-                        </div>
-                        <div class='form-group'>
-                            <label for='info'>Vaš zapis:</label>
-                            <textarea class='form-control' type='text' name='info' row='4' placeholder='$userChoice->info'></textarea>
-                        </div>
-                        <button type='submit' name='submit' class='btn btn-light float-right'>Promjeni</button>
+                        <button type='submit' name='submit' class='btn btn-light float-right'>Zapiši</button>
                     </form>";
                 }
         }

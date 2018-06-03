@@ -1,20 +1,17 @@
 <?php
-session_start();
 error_reporting(E_ALL & ~E_NOTICE);
+session_start();
+if (!(isset($_SESSION['id'])) || (array_key_exists("id", $_GET) && $_GET["id"] > 12)){
+    header("Location: index.php");
+    die();
+}
 include "./head.html";
 include "./nav.php";
 include "./repository/checklist.php";
 include "./repository/providers.php";
 include "./repository/offers.php";
 include "./repository/userChoice.php";
-if (!(isset($_SESSION['id']))){
-    header("Location: index.php");
-    die();
-}
-if(array_key_exists("id", $_GET) && $_GET["id"] > 12) {
-    header("Location: index.php");
-    die();
-}
+include "./repository/WeddingExpense.php";
 ?>
 <div class="container col-sm-10 paper">
 <hr>
@@ -50,16 +47,11 @@ if(array_key_exists("id", $_GET) && $_GET["id"] > 12) {
         </div>
         <div class="col-sm-3">
             <?php if(array_key_exists("id", $_GET)) {
-                echo "<h2 class='text-center'>VAŠ ODABIR</h2><hr>";
+                echo "<h2 class='text-center'>Vaš podsjetnik</h2><hr>";
                 showUserChoice::Draw($_GET['id']);
                 } ?>
         </div>
-        <div class="col-sm-2 text-center">
-            <h2>INFO</h2><hr>
-            <h4><?php echo $_SESSION['gender']."<br>".$_SESSION['firstName']." ".$_SESSION['lastName']; ?></h4>
-            <p>E-pošta: <?php echo $_SESSION['email']; ?></p>
-            <p>Datum svadbe: <?php echo(date("d.m.Y", strtotime($_SESSION['weddingDate']))); ?></p>
-        </div>
+        <?php include_once "includes/userInfo.php"; ?>
     </div>
 </div>
 <?php if(array_key_exists("id", $_GET)) { ?>
