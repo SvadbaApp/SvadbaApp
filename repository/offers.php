@@ -31,3 +31,4 @@ class showOffers {
         return $allProviders;
     }
 }
+?>

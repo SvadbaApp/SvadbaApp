@@ -37,3 +37,4 @@ if (isset($_POST['submit'])){
     //log in korisnika
     include_once "../repository/session.php";
 }
+?>

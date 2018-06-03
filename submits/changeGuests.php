@@ -29,3 +29,4 @@ if (isset($_POST['insert'])) {
     $queryInsert->execute();
     }
 header("Location: ../guests.php");
+?>

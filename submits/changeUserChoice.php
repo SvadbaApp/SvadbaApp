@@ -27,3 +27,4 @@ if (isset($_POST['submit'])) {
     }
 }
 header("Location: ../userHomepage.php?id=$id");
+?>

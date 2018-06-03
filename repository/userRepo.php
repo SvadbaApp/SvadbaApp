@@ -30,3 +30,4 @@ class UserRepository {
         $query->execute();
     }
 }
+?>
