@@ -13,7 +13,7 @@
       <?php
       $fromYear = 2018;
       $thisYear = (int)date('Y');
-      echo $fromYear . (($fromYear != $thisYear) ? '-' . $thisYear : '');?> @ <a href="https://svadbaapp.isolaja.com/">svadbaapp.com</a>
+      echo $fromYear . (($fromYear != $thisYear) ? '-' . $thisYear : '');?> @ <a href="http://svadbaapp.isolaja.com/">svadbaapp.com</a>
   </small>
 
 </footer>

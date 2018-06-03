@@ -44,3 +44,4 @@ class GetChecklist {
         echo $result[0]['DESCRIPTION'];
     }
 }
+?>

@@ -66,7 +66,6 @@ include "./repository/WeddingExpense.php";
         <!--example site end-->
     </div>
 </div>
-
 <br><br>
 <?php
 include "footer.php";
