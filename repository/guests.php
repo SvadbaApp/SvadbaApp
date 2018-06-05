@@ -1,11 +1,11 @@
 <?php
-include_once "./model/Guests.php";
-include_once "./Db.php";
+include_once "model/Guests.php";
+include_once "Db.php";
 class ShowGuests {
 
     public static function insertToModel() {
         $conn = Db::getDbConnection();
-        $query = $conn->prepare("SELECT * FROM GUESTS ORDER BY GUEST_LASTNAME, GUEST_FIRSTNAME");
+        $query = $conn->prepare("SELECT * FROM guests ORDER BY GUEST_LASTNAME, GUEST_FIRSTNAME");
         $query->execute();
         $result = $query->fetchAll(PDO::FETCH_ASSOC);
         $allGuests = [];

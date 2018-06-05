@@ -6,7 +6,7 @@ class UserRepository {
     // Funkcija dohvaća korisnika
     public static function getUser($email, $password) {
         $conn = Db::getDbConnection();
-        $query = $conn->prepare("SELECT *, GENDER.TITLE as GENDER_TITLE FROM USER INNER JOIN GENDER ON GENDER.ID = GENDER WHERE EMAIL = :em");
+        $query = $conn->prepare("SELECT *, gender.TITLE as GENDER_TITLE FROM user INNER JOIN gender ON gender.ID = GENDER WHERE EMAIL = :em");
         $query->bindParam(':em', $email);
         $query->execute();
         $result = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -20,7 +20,7 @@ class UserRepository {
     // Funkcija umece novog korisnika u bazu
     public function insertNewUser($userToInsert) {
         $conn = Db::getDbConnection();
-        $query = $conn->prepare("INSERT INTO USER (FIRST_NAME, LAST_NAME, GENDER, EMAIL, PASSWORD, WEDDING_DATE) VALUES (:fn, :ln, :gender, :em, :pass, :weddingDate)");
+        $query = $conn->prepare("INSERT INTO user (FIRST_NAME, LAST_NAME, GENDER, EMAIL, PASSWORD, WEDDING_DATE) VALUES (:fn, :ln, :gender, :em, :pass, :weddingDate)");
         $query->bindParam(':fn', $userToInsert->getFirstName());
         $query->bindParam(':ln', $userToInsert->getLastName());
         $query->bindParam(':gender', $userToInsert->getGender());

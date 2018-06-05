@@ -1,17 +1,9 @@
 <?php
-error_reporting(E_ALL & ~E_NOTICE);
-session_start();
-if (!(isset($_SESSION['id'])) || (array_key_exists("id", $_GET) && $_GET["id"] > 12)){
-    header("Location: index.php");
-    die();
-}
-include "./head.html";
-include "./nav.php";
-include "./repository/checklist.php";
-include "./repository/providers.php";
-include "./repository/offers.php";
-include "./repository/userChoice.php";
-include "./repository/WeddingExpense.php";
+include "repository/checklist.php";
+include "repository/providers.php";
+include "repository/offers.php";
+include "repository/userChoice.php";
+include "repository/weddingExpense.php";
 ?>
 <div class="container col-sm-10 paper">
 <hr>
@@ -40,7 +32,7 @@ include "./repository/WeddingExpense.php";
                 } else if($_GET == NULL) { ?>
                     <h2 class="text-center">Svadba App</h2><hr>
                     <div class="text-justify"> <?php
-                    echo "<p>Organiziranje vjenčanja uistinu je zahtjevan posao koji traži puno planiranja i razmišljanja unaprijed.  Morate razmišljati o vjenčanici, cipelama, šminki, najmu prostora za vjenčanje, vjenčanom buketu, tečaju plesa, fotografu, dekoraciji, pozivnicama i zahvalnicama, rasporedu sjedenja gostiju i mnogim drugim sitnicama.<br><br>Kako biste bili sigurni da prilikom organizacije svojeg vjenčanja niste ništa propustili, prođite s nama popis, odnosno checklistu za vjenčanje</p>";
+                    echo "<p>Organiziranje vjenčanja uistinu je zahtjevan posao koji traži puno planiranja i razmišljanja unaprijed.  Morate razmišljati o vjenčanici, cipelama, šminki, najmu prostora za vjenčanje, vjenčanom buketu, tečaju plesa, fotografu, dekoraciji, pozivnicama i zahvalnicama, rasporedu sjedenja gostiju i mnogim drugim sitnicama.<br><br>Kako biste bili sigurni da prilikom organizacije svojeg vjenčanja niste ništa propustili, prođite s nama popis, odnosno listu za svadbu.</p>";
                 } ?>
             </div>
             <!-- Posuđen tekst od Apparo-Centar vjenčanog prstenja -->

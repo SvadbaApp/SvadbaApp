@@ -1,23 +1,7 @@
 <?php
-session_start();
-require_once "head.html";
-?>
-<div class="paper">
-<h1 class="text-center italianno"><img class="logo" src="img/logo.png" alt="Svadba-App-Logo"><br>Svadba App<br></h1>
-<!-- Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a> -->
-
-<p class="text-center italianno headline">Isplanirajte Vaš najvažniji dan uz našu pomoć</p>
-</div>
-<?php
-    if (array_key_exists("task", $_GET) && $_GET["task"]== "registerUser") {
-        include "signUpForm.php";
-    } else if ($_SESSION) {
-        header("Location: userHomepage.php");
-    } else {
-        include "signInForm.html";
-    }
-?>
-<br><br>
-<?php
+error_reporting(E_ALL & ~E_NOTICE);
+include_once "head.php";
+include_once "nav.php";
+include_once "controller.php";
 require_once "footer.php";
 ?>

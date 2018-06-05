@@ -1,13 +1,13 @@
 <?php
 
-require_once "./Db.php";
-require_once "./model/Checklist.php";
+require_once "Db.php";
+require_once "model/Checklist.php";
 
 class GetChecklist {
 
     public static function DrawList() {
         $conn = Db::getDbConnection();
-        $query = $conn->prepare("SELECT * FROM CHECKLIST");
+        $query = $conn->prepare("SELECT * FROM checklist");
         $query->execute();
         $result = $query->fetchAll(PDO::FETCH_ASSOC);
 
@@ -22,13 +22,13 @@ class GetChecklist {
         }
 
         foreach ($entireChecklist as $singleItem) {
-            echo "<li><a href='userHomepage.php?id=$singleItem->id'>$singleItem->title</a></li>";
+            echo "<li><a href='index.php?id=$singleItem->id'>$singleItem->title</a></li>";
         }
     }
 
     public static function DrawTitle($id) {
         $conn = Db::getDbConnection();
-        $query = $conn->prepare("SELECT TITLE FROM CHECKLIST WHERE ID = :id");
+        $query = $conn->prepare("SELECT TITLE FROM checklist WHERE ID = :id");
         $query->bindParam(':id', $id);
         $query->execute();
         $result = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -37,7 +37,7 @@ class GetChecklist {
 
     public static function DrawDescription($id) {
         $conn = Db::getDbConnection();
-        $query = $conn->prepare("SELECT DESCRIPTION FROM CHECKLIST WHERE ID = :id");
+        $query = $conn->prepare("SELECT DESCRIPTION FROM checklist WHERE ID = :id");
         $query->bindParam(':id', $id);
         $query->execute();
         $result = $query->fetchAll(PDO::FETCH_ASSOC);

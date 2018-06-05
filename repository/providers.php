@@ -1,13 +1,13 @@
 <?php
 
-include_once "./model/Providers.php";
-include_once "./Db.php";
+include_once "model/Providers.php";
+include_once "Db.php";
 
 class showProviders {
 
     public static function insertToModel() {
         $conn = Db::getDbConnection();
-        $query = $conn->prepare("SELECT * FROM PROVIDERS");
+        $query = $conn->prepare("SELECT * FROM providers");
         $query->execute();
         $result = $query->fetchAll(PDO::FETCH_ASSOC);
         $allProviders = [];

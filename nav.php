@@ -6,20 +6,53 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <?php if(empty($_SESSION['id'])) { } else {?>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         <a class="nav-link" href="index.php">SVADBA APP</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="wedding-expense.php">TROŠKOVNIK</a>
+        <a class="nav-link" href="index.php?task=wedding-expense">TROŠKOVNIK</a>
       </li>
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="guests.php">GOSTI</a>
-      </li> -->
-    </ul>
-    <form class="form-inline my-2 my-lg-0" action="repository/signOut.php" method="POST">
-      <button class="btn btn-light my-2 my-sm-0" type="submit" name="submit">Odjava</button>
-    </form>
+    </ul> <?php } ?>
+    <ul class="navbar-nav fixed-left ml-auto">
+        <li>
+          <div class="nav-login">
+          <?php
+          if (isset($_SESSION['id'])){?>
+          <form action="repository/signOut.php" method="POST">
+            <button type="submit" name="submit" class="btn btn-dark-purple my-2 my-sm-0">Odjava</button>
+          </form><?php
+          } else { ?>
+          <form class="form-inline" action="repository/signIn.php" method="POST">
+            <input class="form-control mr-sm-2" type="text" name="email" placeholder="e-pošta">
+            <input class="form-control mr-sm-2" type="password" name="password" placeholder="lozinka">
+            <button type="submit" name="submit" class="btn btn-outline-purple my-2 my-sm-0">Prijava</button>
+          </form>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-dark-purple my-2 my-sm-0 header-link-white" href="index.php?task=signUpUser">Registriraj se</a>
+        </li>
+        <?php
+        }
+        ?>
+      </ul>
+
+
+
+
+    <!-- <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <form class="form-inline my-2 my-lg-0" action="repository/signOut.php" method="POST">
+          <a class="nav-link" type="submit" name="submit">Odjava</a>
+        </form>
+      </li>
+    </ul> -->
+
+
+
+
   </div>
   <a class="navbar-brand img-hor-vert" href="index.php"><img class="logo" src="img/logo.png" alt="Svadba-App-Logo"></a>
 </nav>

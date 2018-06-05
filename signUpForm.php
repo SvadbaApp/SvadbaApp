@@ -42,7 +42,7 @@ include_once "repository/gender.php";
                 <button type="submit" name="submit" class="btn btn-light">Registriraj se</button>
             </form>
             <div class="float-right">
-                <a type="button" class="btn btn-light" href="index.php?task=loginUser"> Postojeći korisnik? Prijavi se</a>
+                <a type="button" class="btn btn-light" href="index.php?task=signInUser"> Postojeći korisnik? Prijavi se</a>
             </div>
         </div>
         <div class="col-sm-3"></div>

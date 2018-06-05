@@ -1,13 +1,12 @@
 <?php
-session_start();
-include_once "./Db.php";
-include_once "./model/Expense.php";
-class WeddingExpense {
+include_once "Db.php";
+include_once "model/Expense.php";
+class weddingExpense {
 
     public static function AllExpense() {
         $allExpense = [];
         $conn = Db::getDbConnection();
-        $query = $conn->prepare("SELECT * FROM EXPENSE WHERE USER_ID = :userId");
+        $query = $conn->prepare("SELECT * FROM expense WHERE USER_ID = :userId");
         $query->bindParam(':userId', $_SESSION['id']);
         $query->execute();
         $result = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -24,7 +23,7 @@ class WeddingExpense {
 
     public static function TotalCost() {
         $conn = Db::getDbConnection();
-        $query = $conn->prepare("SELECT SUM(PRICE) FROM EXPENSE WHERE USER_ID = :userId");
+        $query = $conn->prepare("SELECT SUM(PRICE) FROM expense WHERE USER_ID = :userId");
         $query->bindParam(':userId', $_SESSION['id']);
         $query->execute();
         $totalCost = $query->fetchAll(PDO::FETCH_ASSOC);

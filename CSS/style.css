@@ -16,25 +16,25 @@ body {
 /* unvisited link */
 a:link {
     color: black;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 /* visited link */
 a:visited {
     color: black;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 /* mouse over link */
 a:hover {
     color: darkred;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 /* selected link */
 a:active {
     color: black;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 h1 {
@@ -79,4 +79,8 @@ h1 {
     color: black;
     text-decoration: none;
     font-weight: bold;
+}
+
+.notif{
+    color: white;
 }

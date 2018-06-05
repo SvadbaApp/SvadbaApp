@@ -21,7 +21,7 @@ if (isset($_POST['submit'])){
 
     //provjeri da li korisnik postoji
     $conn = Db::getDbConnection();
-    $query = $conn->prepare("SELECT * FROM USER WHERE EMAIL = :email");
+    $query = $conn->prepare("SELECT * FROM user WHERE EMAIL = :email");
     $query->bindParam(':email', $email);
     $query->execute();
     $result = $query->fetchAll(PDO::FETCH_ASSOC);

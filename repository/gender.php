@@ -1,13 +1,13 @@
 <?php
 
-include_once "./model/Gender.php";
-include_once "./Db.php";
+include_once "model/Gender.php";
+include_once "Db.php";
 
 class ShowGender {
 
     public static function insertToModel() {
         $conn = Db::getDbConnection();
-        $query = $conn->prepare("SELECT * FROM GENDER");
+        $query = $conn->prepare("SELECT * FROM gender");
         $query->execute();
         $result = $query->fetchAll(PDO::FETCH_ASSOC);
         $allGenders = [];

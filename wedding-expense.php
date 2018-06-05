@@ -1,13 +1,8 @@
 <?php
-error_reporting(E_ALL & ~E_NOTICE);
-session_start();
-if (!(isset($_SESSION['id']))){
+if(empty($_SESSION['id'])) {
     header("Location: index.php");
-    die();
 }
-include "./head.html";
-include "./nav.php";
-include "./repository/WeddingExpense.php";
+include "repository/weddingExpense.php";
 ?>
 <div class="container col-sm-10 paper">
     <hr>
@@ -22,7 +17,7 @@ include "./repository/WeddingExpense.php";
         <div class="col-sm-10 text-left">
             <h2>TROŠKOVNIK</h2><hr>
             <div class="row">
-                <?php WeddingExpense::Draw(); ?>
+                <?php weddingExpense::Draw(); ?>
             </div>
         </div>
         <?php include_once "includes/userInfo.php"; ?>

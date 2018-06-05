@@ -1,13 +1,13 @@
 <?php
 
-include_once "./model/UserChoice.php";
-include_once "./Db.php";
+include_once "model/UserChoice.php";
+include_once "Db.php";
 
 class showUserChoice {
 
     public static function insertToModel() {
         $conn = Db::getDbConnection();
-        $query = $conn->prepare("SELECT * FROM USER_CHOICE WHERE USER_ID = :userId");
+        $query = $conn->prepare("SELECT * FROM user_choice WHERE USER_ID = :userId");
         $query->bindParam(':userId', $_SESSION['id']);
         $query->execute();
         $result = $query->fetchAll(PDO::FETCH_ASSOC);
