@@ -6,14 +6,14 @@
   crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
   crossorigin="anonymous"></script>
-
+<br>
 <footer>
   <small class="form-text fixed-bottom text-center bg-light">
       &copy;
       <?php
       $fromYear = 2018;
       $thisYear = (int)date('Y');
-      echo $fromYear . (($fromYear != $thisYear) ? '-' . $thisYear : '');?> @ <a href="http://svadbaapp.isolaja.com/">svadbaapp.com</a>
+      echo $fromYear . (($fromYear != $thisYear) ? '-' . $thisYear : '');?> @ <a href="http://svadbaapp.isolaja.com/">svadbaapp.com</a> by <a href="http://isolaja.com" target="_blank">isolaja.com</a>
   </small>
 
 </footer>

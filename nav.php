@@ -24,11 +24,6 @@
             <button type="submit" name="submit" class="btn btn-dark-purple my-2 my-sm-0">Odjava</button>
           </form><?php
           } else { ?>
-          <form class="form-inline" action="repository/signIn.php" method="POST">
-            <input class="form-control mr-sm-2" type="text" name="email" placeholder="e-pošta">
-            <input class="form-control mr-sm-2" type="password" name="password" placeholder="lozinka">
-            <button type="submit" name="submit" class="btn btn-outline-purple my-2 my-sm-0">Prijava</button>
-          </form>
           </div>
         </li>
         <li class="nav-item">

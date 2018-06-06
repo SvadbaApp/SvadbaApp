@@ -18,6 +18,7 @@ include "repository/weddingExpense.php";
             <h2>TROŠKOVNIK</h2><hr>
             <div class="row">
                 <?php weddingExpense::Draw(); ?>
+                <br><br>
             </div>
         </div>
         <?php include_once "includes/userInfo.php"; ?>

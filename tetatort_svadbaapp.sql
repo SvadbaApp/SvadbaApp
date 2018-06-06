@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.7.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jun 06, 2018 at 12:47 AM
--- Server version: 10.1.30-MariaDB
--- PHP Version: 7.2.2
+-- Host: localhost:3306
+-- Generation Time: Jun 06, 2018 at 04:47 PM
+-- Server version: 10.0.34-MariaDB
+-- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `svadbaapp`
+-- Database: `tetatort_svadbaapp`
 --
 
 -- --------------------------------------------------------
@@ -64,6 +64,21 @@ CREATE TABLE `expense` (
   `TITLE` varchar(50) NOT NULL,
   `PRICE` decimal(6,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `expense`
+--
+
+INSERT INTO `expense` (`ID`, `USER_ID`, `TITLE`, `PRICE`) VALUES
+(2, 1, 'daj', '500.00'),
+(3, 2, 'kravata', '500.00'),
+(4, 1, 'kravata', '120.99'),
+(6, 2, 'Plavo', '1220.00'),
+(7, 6, 'Sve', '5500.00'),
+(9, 3, 'Nešto ', '5550.00'),
+(10, 4, 'Prstenje', '4500.00'),
+(12, 7, 'Zdravo', '488.95'),
+(13, 1, 'autek', '3000.00');
 
 -- --------------------------------------------------------
 
@@ -213,7 +228,7 @@ CREATE TABLE `user` (
   `ID` int(11) NOT NULL,
   `FIRST_NAME` varchar(50) CHARACTER SET utf8 COLLATE utf8_croatian_ci NOT NULL,
   `LAST_NAME` varchar(50) CHARACTER SET utf8 COLLATE utf8_croatian_ci NOT NULL,
-  `GENDER` int(1) DEFAULT NULL,
+  `GENDER_ID` int(1) DEFAULT NULL,
   `EMAIL` varchar(50) CHARACTER SET utf8 COLLATE utf8_croatian_ci NOT NULL,
   `PASSWORD` varchar(256) CHARACTER SET utf8 COLLATE utf8_croatian_ci NOT NULL,
   `DATE_JOINED` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -224,11 +239,14 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`ID`, `FIRST_NAME`, `LAST_NAME`, `GENDER`, `EMAIL`, `PASSWORD`, `DATE_JOINED`, `WEDDING_DATE`) VALUES
+INSERT INTO `user` (`ID`, `FIRST_NAME`, `LAST_NAME`, `GENDER_ID`, `EMAIL`, `PASSWORD`, `DATE_JOINED`, `WEDDING_DATE`) VALUES
 (1, 'test', 'test', 1, 'test@test.com', '$2y$10$BpUDbGCOrRwXIGnBGDT4h.thGlxsEb./6m65.hfO3Uw6ANpnYkXBO', '2018-06-02 12:58:10', '2019-05-05'),
 (2, 'Igor', 'Šolaja', 2, 'ramoneiggy@gmail.com', '$2y$10$pIj591qUy5qBtr29Jh5Xz.7enNCuJfLpijkGt740oG2Qpfc5qHaCm', '2018-06-02 21:49:59', '2018-04-28'),
 (3, 'Ruža', 'Kalaica', 1, 'novitest@mail.com', '$2y$10$FFbcxoU548HSLtLuLUVNf.MVGq5oyT9ITHxha1g7j.o.bNp/up7pG', '2018-06-02 22:19:24', '2020-05-15'),
-(4, 'test2', 'test2', 2, 'test2@test.com', '$2y$10$DkzHy9302Ur.2PIrrDC.Keyc3ZCJna9VQxYVuSZ9EIvATo4VxPsrO', '2018-06-05 23:57:17', '2019-12-12');
+(4, 'test2', 'test2', 2, 'test2@test.com', '$2y$10$DkzHy9302Ur.2PIrrDC.Keyc3ZCJna9VQxYVuSZ9EIvATo4VxPsrO', '2018-06-05 23:57:17', '2019-12-12'),
+(5, 'test1', 'test1', 1, 'test1@test.com', '$2y$10$1z07DVbyMnEwwXvSGtkR.ulUZXWpBrjdefS6b7xE/GakRM21OnqXK', '2018-06-06 00:51:41', '2018-06-18'),
+(6, 'Toni', 'Štambuk ', 2, 'toni.stambuk@yahoo.com', '$2y$10$Abq2/ys3Wq0BmnvPIijPd.eW..0CjyM9ET32yBxaw3Nt65KCOA9Xu', '2018-06-06 07:28:56', '2018-06-30'),
+(7, 'Test4', 'Test4', 1, 'test4@test.com', '$2y$10$P4tQaAmPFGplGHbpavwareLZ0.FbCGRfgcCIa.Hxgu62LcNkQTusW', '2018-06-06 14:02:36', '2018-06-29');
 
 -- --------------------------------------------------------
 
@@ -242,6 +260,23 @@ CREATE TABLE `user_choice` (
   `CHECKLIST_ID` int(11) NOT NULL,
   `INFO` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `user_choice`
+--
+
+INSERT INTO `user_choice` (`ID`, `USER_ID`, `CHECKLIST_ID`, `INFO`) VALUES
+(1, 1, 1, 'radi?bdbdn'),
+(2, 1, 5, 'crkva 2'),
+(3, 2, 1, 'i to radi? Affiliate '),
+(4, 1, 2, 'a ovo?'),
+(5, 2, 12, 'To? '),
+(6, 4, 1, 'Pozivnica'),
+(7, 6, 5, 'Crkva'),
+(8, 4, 9, 'Zategnute looks '),
+(9, 7, 4, 'Radi li sad? '),
+(10, 1, 11, 'njam'),
+(11, 1, 9, 'radi i to');
 
 --
 -- Indexes for dumped tables
@@ -299,7 +334,7 @@ ALTER TABLE `providers`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`ID`),
-  ADD KEY `GENDER` (`GENDER`);
+  ADD KEY `GENDER` (`GENDER_ID`);
 
 --
 -- Indexes for table `user_choice`
@@ -318,55 +353,46 @@ ALTER TABLE `user_choice`
 --
 ALTER TABLE `checklist`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
 --
 -- AUTO_INCREMENT for table `expense`
 --
 ALTER TABLE `expense`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
-
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `family_side`
 --
 ALTER TABLE `family_side`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT for table `gender`
 --
 ALTER TABLE `gender`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT for table `guests`
 --
 ALTER TABLE `guests`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
 --
 -- AUTO_INCREMENT for table `offers`
 --
 ALTER TABLE `offers`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
-
 --
 -- AUTO_INCREMENT for table `providers`
 --
 ALTER TABLE `providers`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
-
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `user_choice`
 --
 ALTER TABLE `user_choice`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
-
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- Constraints for dumped tables
 --
@@ -395,7 +421,7 @@ ALTER TABLE `offers`
 -- Constraints for table `user`
 --
 ALTER TABLE `user`
-  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`GENDER`) REFERENCES `gender` (`ID`);
+  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`GENDER_ID`) REFERENCES `gender` (`ID`);
 
 --
 -- Constraints for table `user_choice`
