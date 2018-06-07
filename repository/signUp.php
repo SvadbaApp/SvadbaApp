@@ -6,7 +6,7 @@ if (isset($_POST['submit'])){
     require_once "../repository/userRepo.php";
 
     if($_POST['password'] !== $_POST['repeatPassword'] || $_POST['email'] !== $_POST['repeatEmail']) {
-        header("Location: ../index.php?task=registerUser#passwordsOrEmailDontMatch");
+        header("Location: ../index.php?error=repeat");
         die();
     }
     $firstName = $_POST['firstName'];
@@ -15,7 +15,7 @@ if (isset($_POST['submit'])){
     $email = $_POST['email'];
     $weddingDate = $_POST['weddingDate'];
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        header("Location: ../index.php?task=registerUser#emailNotValidated");
+        header("Location: ../index.php?error=emailValidate");
         die();
     }
 
@@ -26,7 +26,7 @@ if (isset($_POST['submit'])){
     $query->execute();
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
     if (count($result)>0) {
-        header("Location: ../index.php?task=registerUser#userAlreadyExists");
+        header("Location: ../index.php?error=emailExists");
         die();
     }
 

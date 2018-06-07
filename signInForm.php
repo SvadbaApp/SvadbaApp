@@ -2,6 +2,7 @@
     <div class="row">
         <div class="col-sm-3"></div>
         <div class="col-sm-6 paper">
+        <?php include "includes/errors.php"; ?>
             <span>
                 <h2>Prijava</h2>
             </span>

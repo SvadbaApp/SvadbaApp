@@ -21,33 +21,18 @@
           <?php
           if (isset($_SESSION['id'])){?>
           <form action="repository/signOut.php" method="POST">
-            <button type="submit" name="submit" class="btn btn-dark-purple my-2 my-sm-0">Odjava</button>
+            <button type="submit" name="submit" class="btn btn-dark-purple my-2 my-sm-0">Odjava</button>&nbsp&nbsp
           </form><?php
           } else { ?>
           </div>
         </li>
         <li class="nav-item">
-          <a class="btn btn-dark-purple my-2 my-sm-0 header-link-white" href="index.php?task=signUpUser">Registriraj se</a>
+          <a class="btn btn-dark-purple my-2 my-sm-0 header-link-white" href="index.php?task=signUpUser">Registriraj se</a>&nbsp&nbsp
         </li>
         <?php
         }
         ?>
       </ul>
-
-
-
-
-    <!-- <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <form class="form-inline my-2 my-lg-0" action="repository/signOut.php" method="POST">
-          <a class="nav-link" type="submit" name="submit">Odjava</a>
-        </form>
-      </li>
-    </ul> -->
-
-
-
-
   </div>
   <a class="navbar-brand img-hor-vert" href="index.php"><img class="logo" src="img/logo.png" alt="Svadba-App-Logo"></a>
 </nav>

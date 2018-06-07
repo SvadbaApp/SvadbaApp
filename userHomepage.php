@@ -57,8 +57,8 @@ include "repository/weddingExpense.php";
             }} ?>
         <!--example site end-->
     </div>
+    <br>
 </div>
-<br><br>
 <?php
 include "footer.php";
 ?>

@@ -7,7 +7,7 @@ if (isset($_POST['submit'])){
 
     $email = $_POST['email'];
     if (empty($email) || empty($_POST['password'])){
-        header("Location: ../index.php?signup=empty");
+        header("Location: ../index.php?error=empty");
         die();
     }
 

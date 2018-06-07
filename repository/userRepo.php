@@ -11,7 +11,7 @@ class UserRepository {
         $query->execute();
         $result = $query->fetchAll(PDO::FETCH_ASSOC);
         if (!(password_verify($password, $result[0]['PASSWORD']))) {
-            header("Location: ../index.php?signup=wrongPassword");
+            header("Location: ../index.php?error");
             die();
         }
         return $result;

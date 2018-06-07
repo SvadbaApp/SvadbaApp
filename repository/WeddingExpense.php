@@ -38,7 +38,7 @@ class weddingExpense {
             echo "
             <form action='./submits/changeWeddingExpense.php' method='POST' class='col-sm-2'>
                 <div class='form-group'>
-                    <textarea class='form-control' type='text' name='title' rows='1' placeholder='Naziv' required></textarea>
+                    <input class='form-control' type='text' name='title' rows='1' placeholder='Naziv' required>
                     <textarea class='form-control' type='number' name='price' rows='1' placeholder='Cijena u kunama' required></textarea>
                     <button type='submit' name='insert' class='btn btn-light float-right'>Dodaj novo</button>
                 </div>
@@ -48,7 +48,7 @@ class weddingExpense {
             <form action='./submits/changeWeddingExpense.php' method='POST' class='col-sm-2'>
                 <div class='form-group'>
                     <input type='hidden' name='id' value='$singleItem->id'>
-                    <textarea class='form-control' type='text' name='title' rows='1' placeholder='$singleItem->title' required>$singleItem->title</textarea>
+                    <input class='form-control' type='text' name='title' rows='1' placeholder='$singleItem->title' value='$singleItem->title' required>
                     <textarea class='form-control' type='number' name='price' rows='1' placeholder='$singleItem->price HRK' required>$singleItem->price HRK</textarea>
                     <div class='float-right'>
                         <button type='submit' name='delete' class='btn btn-danger'>Obriši</button>
